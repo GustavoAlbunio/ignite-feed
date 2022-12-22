@@ -6,6 +6,24 @@ import styles from './App.module.css';
 
 import './global.css';
 
+interface Author {
+  avatarUrl: string;
+  name: string;
+  role: string;
+}
+
+interface Content {
+  type: 'paragraph' | 'link';
+  content: string;
+}
+
+interface Post {
+  id: number;
+  author: Author;
+  publishedAt: Date;
+  content: Content[];
+}
+
 const posts = [
   {
     id: 1,
@@ -55,7 +73,7 @@ const posts = [
     ],
     publishedAt: new Date('2022-12-21 17:00:00'),
   },
-];
+] as Post[];
 
 export function App() {
   return (
